@@ -19,7 +19,7 @@
             | <a href="#modal1" class="modal-trigger"><button class="btn waves-effect waves-light" id="Cadastrar">Cadastrar</button></a>
         </p>
 
-        <form action="../carrinho" method="post" class="col s6">
+        <form action="../mostrarCli" method="post" class="col s6">
             <p class="right-aligned">
             <button class="btn" id="btMostrar"> Mostrar </button>
             </p>

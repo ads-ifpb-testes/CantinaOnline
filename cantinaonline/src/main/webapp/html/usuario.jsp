@@ -22,7 +22,13 @@
     <div class="col s12 green darken-5">
         <img width="109px" src="../imagens/logo.png"/>
         <p class="right">
-            <a href="../invalidando"><button class="btn center-align">Logout</button></a>
+            <a href="../invalidando"><button class="btn center-align">Logout</button></a> |
+            <form action="../mostrarFunc" method="post" class="col s6">
+                <p class="right-aligned">
+                    <button class="btn" id="btMostrar"> Mostrar </button>
+                </p>
+            </form>
+
         </p>
     </div>
 </div>

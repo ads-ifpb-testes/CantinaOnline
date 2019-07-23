@@ -14,6 +14,7 @@ public class AcessoProduto {
         this.quantidade = quantidade;
     }
 
+
     public String getId() {
         return id;
     }

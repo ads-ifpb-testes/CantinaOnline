@@ -21,6 +21,7 @@ public class CadastroProdutoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
         Produto produto = new Produto(req.getParameter("id"), req.getParameter("nome"), req.getParameter("preco"),
                 req.getParameter("quantidade"));
 

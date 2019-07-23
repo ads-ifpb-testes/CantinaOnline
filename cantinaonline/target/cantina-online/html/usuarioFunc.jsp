@@ -18,7 +18,7 @@
             | <a href="#modal3" class="modal-trigger"><button class="btn waves-effect waves-light">Cadastrar Produto</button></a>
         </p>
 
-        <form action="../carrinho" method="post" class="col s6">
+        <form action="../mostrarFunc" method="post" class="col s6">
             <p class="right-aligned">
             <button class="btn" id="btMostrar"> Mostrar </button>
             </p>

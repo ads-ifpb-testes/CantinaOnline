@@ -37,7 +37,7 @@
 </div>
 
 <div class="right col s3">
-    <form action="home.jsp">
+    <form action="#">
         <button class="btn waves-effect waves-light"> Finalizar </button>
     </form>
 </div>
@@ -82,7 +82,6 @@
                 <td>${item.id}</td>
                 <td>${item.nome}</td>
                 <td>${item.preco}</td>
-                <td>${item.quantidade}</td>
                 <td> <button type="submit">Comprar</button> </td>
                     <%--<td> <input type="hidden" name="add" value="adiciona"/> </td>--%>
             </tr>

@@ -1,5 +1,7 @@
 package br.com.ifpb.cantinaonline.model;
 
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+
 public class Produto {
     String id;
     String nome;
