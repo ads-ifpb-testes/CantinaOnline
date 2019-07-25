@@ -35,7 +35,7 @@ public class AdicionarServlet extends HttpServlet {
         System.out.println(carrinho.toString());
 
         HttpSession session = req.getSession(true);
-        session.setAttribute("toCarrinho", carrinho);
+        session.setAttribute("toCarrinho", carrinho.getQuantidade());
         resp.sendRedirect("html/produtos.jsp");
 
 

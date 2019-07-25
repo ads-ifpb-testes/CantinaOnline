@@ -30,6 +30,7 @@ public class CadastroProdutoServlet extends HttpServlet {
         try {
 
             produtoDAOBD.adicionarProduto(produto);
+            System.out.println(produto);
 
         } catch (SQLException e) {
             System.out.println(produto.toString());

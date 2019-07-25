@@ -19,7 +19,7 @@ public class ProdutoDAOBD implements ProdutoDAO {
     @Override
     public boolean adicionarProduto(Produto produto) throws SQLException, ClassNotFoundException {
         try(Connection connection = conexao.getConnection()){
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO produtos(id,nome," +
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO produto(id,nome," +
                     "preco,quantidade) VALUES(?,?,?,?)");
             statement.setString(1,produto.getId());
             statement.setString(2,produto.getNome());
@@ -32,7 +32,7 @@ public class ProdutoDAOBD implements ProdutoDAO {
     @Override
     public boolean removerProduto(Produto produto) throws SQLException, ClassNotFoundException {
         try(Connection connection = conexao.getConnection()){
-            PreparedStatement statement = connection.prepareStatement("DELETE FROM produtos WHERE id = ?");
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM produto WHERE id = ?");
             statement.setString(1, produto.getId());
             return statement.executeUpdate()>0;
         }
@@ -45,11 +45,11 @@ public class ProdutoDAOBD implements ProdutoDAO {
     @Override
     public ArrayList listarProduto() throws SQLException, ClassNotFoundException{
         try(Connection connection = conexao.getConnection()){
-           PreparedStatement statement = connection.prepareStatement("SELECT * FROM produtos");
+           PreparedStatement statement = connection.prepareStatement("SELECT * FROM produto");
            ResultSet set = statement.executeQuery();
            ArrayList arrayList = new ArrayList();
 
-            if(set.next()){
+            while (set.next()){
                 String id = set.getString("id");
                 String nome = set.getString("nome");
                 String preco = set.getString("preco");

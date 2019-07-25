@@ -70,10 +70,6 @@
     <th>ID</th>
     <th>Nome</th>
     <th>Preco</th>
-    <th>Quantidade</th>
-    <th>
-
-    </th>
 
     </thead>
     <form action="<c:url value="/adicionar"/>" method="POST">
@@ -82,6 +78,7 @@
                 <td>${item.id}</td>
                 <td>${item.nome}</td>
                 <td>${item.preco}</td>
+                <td></td>
                 <td> <button type="submit">Comprar</button> </td>
                     <%--<td> <input type="hidden" name="add" value="adiciona"/> </td>--%>
             </tr>

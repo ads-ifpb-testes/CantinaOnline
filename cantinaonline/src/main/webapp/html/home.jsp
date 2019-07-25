@@ -13,25 +13,32 @@
 
 <div class="row">
     <div class="col s12 green darken-5">
-        <img width="109px" src="../imagens/logo.png"/>
+        <img width="40px" src="../imagens/logo.png"/>
         <p class="right">
             <a href="#modal2" class="modal-trigger"><button class="btn waves-effect waves-light">Entrar</button></a>
             | <a href="#modal1" class="modal-trigger"><button class="btn waves-effect waves-light" id="Cadastrar">Cadastrar</button></a>
         </p>
 
-        <form action="../mostrarCli" method="post" class="col s6">
-            <p class="right-aligned">
-            <button class="btn" id="btMostrar"> Mostrar </button>
-            </p>
-        </form>
+
 
     </div>
 </div>
 
 <div>
     <center>
-        <img width="790px" src="../imagens/logo.png">
+        <img width="600px" src="../imagens/logo.png">
     </center>
+    <form action="../mostrarCli" method="post" class="col s6">
+    <div class="carousel" >
+        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/coca.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/pizza.png"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/cachorro-quente.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/hamburguer.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/suco.jpg"></a>
+    </div>
+
+    </form>
+
 </div>
 
 <%-- CADASTRO DE USUARIOS --%>
@@ -120,7 +127,7 @@
 
                     <center>
                         <div class="input-field col s12" required>
-                            <button class="btn right">Proximo</button>
+                            <button class="btn right">Enviar</button>
                         </div>
                     </center>
                 </div>
@@ -137,10 +144,10 @@
         <center>
             <div id="divFormularioLogin" class="row container"> <!-- Div dos Dados -->
 
-                <div  id="divTelaLogin">
+
                     <label class="center"><img id="labelImg" width="500px" src="../imagens/logo.png"> </label>
 
-                </div>
+
                 <center><h5> Faça seu Login </h5></center>
 
                 <%-- LOGIN --%>
@@ -204,6 +211,9 @@
 
     $(document).ready(function(){
         $('select').formSelect();
+    });
+    $(document).ready(function(){
+        $('.carousel').carousel();
     });
 
 </script>

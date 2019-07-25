@@ -38,4 +38,8 @@ public class Carrinho {
 
         this.total = total;
     }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
 }

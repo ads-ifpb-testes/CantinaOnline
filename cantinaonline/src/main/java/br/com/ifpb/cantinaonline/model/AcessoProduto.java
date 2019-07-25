@@ -46,4 +46,14 @@ public class AcessoProduto {
     public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return "AcessoProduto{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", preco='" + preco + '\'' +
+                ", quantidade='" + quantidade + '\'' +
+                '}';
+    }
 }
