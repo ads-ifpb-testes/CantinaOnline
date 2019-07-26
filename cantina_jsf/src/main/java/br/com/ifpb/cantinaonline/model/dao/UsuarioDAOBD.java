@@ -27,7 +27,7 @@ public class UsuarioDAOBD implements UsuarioDAO {
             statement.setString(5,usuario.getEndereco().getCidade());
             statement.setString(6,usuario.getEndereco().getBairro());
             statement.setString(7,usuario.getEndereco().getRua());
-            statement.setString(8,usuario.getEndereco().getNumero());
+            statement.setInt(8,usuario.getEndereco().getNumero());
             statement.setString(9,usuario.getSenha());
             statement.setString(10,usuario.getTelefone());
             statement.setString(11, usuario.getFuncao());
