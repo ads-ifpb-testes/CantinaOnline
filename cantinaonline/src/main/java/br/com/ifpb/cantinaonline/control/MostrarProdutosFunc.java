@@ -1,11 +1,6 @@
 package br.com.ifpb.cantinaonline.control;
 
-import br.com.ifpb.cantinaonline.model.AdicionaCarrinho;
-import br.com.ifpb.cantinaonline.model.Produto;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import br.com.ifpb.cantinaonline.model.Carrinho;
+
 import br.com.ifpb.cantinaonline.model.dao.ProdutoDAOBD;
 
 @WebServlet("/mostrarFunc")

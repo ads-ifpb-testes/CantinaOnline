@@ -19,18 +19,18 @@ public class UsuarioDAOBD implements UsuarioDAO {
     public boolean adicionar(Usuario usuario) throws SQLException, ClassNotFoundException {
         try(Connection connection = conexao.getConnection()){
             PreparedStatement statement = connection.prepareStatement("INSERT INTO usuario(nomecompleto,nomeusuario," +
-                    "datanascimento,email,cidade,bairro,rua,numero,senha,telefone,funcao) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                    "idade,email,senha,telefone,funcao,cidade,bairro,rua,numero) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
             statement.setString(1,usuario.getNomeCompleto());
             statement.setString(2,usuario.getNomeUsuario());
-            statement.setDate(3, Date.valueOf(usuario.getDataNascimento()));
+            statement.setInt(3, usuario.getIdade());
             statement.setString(4,usuario.getEmail());
-            statement.setString(5,usuario.getEndereco().getCidade());
-            statement.setString(6,usuario.getEndereco().getBairro());
-            statement.setString(7,usuario.getEndereco().getRua());
-            statement.setInt(8,usuario.getEndereco().getNumero());
-            statement.setString(9,usuario.getSenha());
-            statement.setString(10,usuario.getTelefone());
-            statement.setString(11, usuario.getFuncao());
+            statement.setString(5, usuario.getSenha());
+            statement.setString(6, usuario.getTelefone());
+            statement.setString(7, usuario.getFuncao());
+            statement.setString(8, usuario.getEndereco().getCidade());
+            statement.setString(9,usuario.getEndereco().getBairro());
+            statement.setString(10, usuario.getEndereco().getRua());
+            statement.setInt(11, usuario.getEndereco().getNumero());
             return statement.executeUpdate()>0;
         }
 

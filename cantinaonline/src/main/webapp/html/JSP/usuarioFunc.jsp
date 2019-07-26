@@ -6,13 +6,13 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
 <div class="row">
     <div class="col s12 green darken-5">
-        <img width="109px" src="../imagens/logo.png"/>
+        <img width="109px" src="../../imagens/logo.png"/>
         <p class="right">
             <a href="../invalidando"><button class="btn center-align">Logout</button></a>
             | <a href="#modal3" class="modal-trigger"><button class="btn waves-effect waves-light">Cadastrar Produto</button></a>
@@ -36,7 +36,7 @@
 <div id="modal3" class="modal">
     <div id="divFormulario2" class="row container"> <!-- Div dos Dados -->
         <div  id="divTelaCadastro2">
-            <center><label class="center"><img src="../imagens/logo.png" with="320" height="205"></label></center>
+            <center><label class="center"><img src="../../imagens/logo.png" with="320" height="205"></label></center>
         </div>
         <center> <h5> Informe seus Dados </h5></center>
         <div class="row">
@@ -83,9 +83,9 @@
     </div>
 </div>
 
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../materialize/js/materialize.min.js"></script>
-<script src="../js/configuracoes.js"></script>
+<script src="../../js/jquery-3.4.1.min.js"></script>
+<script src="../../materialize/js/materialize.min.js"></script>
+<script src="../../js/configuracoes.js"></script>
 
 </body>
 </html>

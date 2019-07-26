@@ -15,14 +15,14 @@
 <head>
     <title>Produtos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body id="bodyProdutos">
 
 <div class="row">
     <div class="col s12 green darken-5">
-        <img width="109px" src="../imagens/logo.png"/>
+        <img width="109px" src="../../imagens/logo.png"/>
         <p class="right">
             <a href="home.jsp"><button class="btn waves-effect waves-light">Voltar</button></a>
         </p>

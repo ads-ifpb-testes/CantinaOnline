@@ -6,14 +6,14 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
 
 <div class="row">
     <div class="col s12 green darken-5">
-        <img width="40px" src="../imagens/logo.png"/>
+        <img width="40px" src="../../imagens/logo.png"/>
         <p class="right">
             <a href="#modal2" class="modal-trigger"><button class="btn waves-effect waves-light">Entrar</button></a>
             | <a href="#modal1" class="modal-trigger"><button class="btn waves-effect waves-light" id="Cadastrar">Cadastrar</button></a>
@@ -26,15 +26,15 @@
 
 <div>
     <center>
-        <img width="600px" src="../imagens/logo.png">
+        <img width="600px" src="../../imagens/logo.png">
     </center>
     <form action="../mostrarCli" method="post" class="col s6">
     <div class="carousel" >
-        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/coca.jpg"></a>
-        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/pizza.png"></a>
-        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/cachorro-quente.jpg"></a>
-        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/hamburguer.jpg"></a>
-        <a class="carousel-item" href="produtos.jsp"><img src="../imagens/suco.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../../imagens/coca.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../../imagens/pizza.png"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../../imagens/cachorro-quente.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../../imagens/hamburguer.jpg"></a>
+        <a class="carousel-item" href="produtos.jsp"><img src="../../imagens/suco.jpg"></a>
     </div>
 
     </form>
@@ -45,7 +45,7 @@
 <div id="modal1" class="modal">
     <div id="divFormulario" class="row container"> <!-- Div dos Dados -->
         <div  id="divTelaCadastro">
-            <center><label class="center"><img src="../imagens/logo.png" with="320" height="205" ></label></center>
+            <center><label class="center"><img src="../../imagens/logo.png" with="320" height="205" ></label></center>
         </div>
         <center> <h5> Informe seus Dados </h5></center>
         <div class="row">
@@ -145,7 +145,7 @@
             <div id="divFormularioLogin" class="row container"> <!-- Div dos Dados -->
 
 
-                    <label class="center"><img id="labelImg" width="500px" src="../imagens/logo.png"> </label>
+                    <label class="center"><img id="labelImg" width="500px" src="../../imagens/logo.png"> </label>
 
 
                 <center><h5> Faça seu Login </h5></center>
@@ -204,9 +204,9 @@
 <%--</div>--%>
 
 
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../materialize/js/materialize.min.js"></script>
-<script src="../js/configuracoes.js"></script>
+<script src="../../js/jquery-3.4.1.min.js"></script>
+<script src="../../materialize/js/materialize.min.js"></script>
+<script src="../../js/configuracoes.js"></script>
 <script>
 
     $(document).ready(function(){

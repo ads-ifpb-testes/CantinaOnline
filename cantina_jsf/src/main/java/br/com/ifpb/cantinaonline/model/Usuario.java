@@ -5,22 +5,23 @@ import java.time.LocalDate;
 public class Usuario {
     private String nomeCompleto;
     private String nomeUsuario;
-    private LocalDate dataNascimento;
+    private Integer idade;
     private String email;
     private String senha;
     private String telefone;
     private String funcao;
-    private Endereco endereco;
+    private Endereco endereco = new Endereco();
+
 
 
     public Usuario() {
 
     }
 
-    public Usuario(String nomeCompleto, String nomeUsuario, LocalDate dataNascimento, String senha, String telefone, String funcao, Endereco endereco) {
+    public Usuario(String nomeCompleto, String nomeUsuario, Integer idade, String senha, String telefone, String funcao, Endereco endereco) {
         this.nomeCompleto = nomeCompleto;
         this.nomeUsuario = nomeUsuario;
-        this.dataNascimento = dataNascimento;
+        this.idade = idade;
         this.senha = senha;
         this.telefone = telefone;
         this.funcao = funcao;
@@ -43,12 +44,12 @@ public class Usuario {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
+    public Integer getIdade() {
+        return idade;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setIdade(Integer idade) {
+        this.idade = idade;
     }
 
     public String getEmail() {

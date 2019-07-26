@@ -13,14 +13,14 @@
 <head>
     <title>Usuário</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
 
 <div class="row">
     <div class="col s12 green darken-5">
-        <img width="109px" src="../imagens/logo.png"/>
+        <img width="109px" src="../../imagens/logo.png"/>
         <p class="right">
             <a href="../invalidando"><button class="btn center-align">Logout</button></a> |
             <form action="../mostrarFunc" method="post" class="col s6">

@@ -1,9 +1,11 @@
 package br.com.ifpb.cantinaonline;
 
 import br.com.ifpb.cantinaonline.model.Usuario;
+import br.com.ifpb.cantinaonline.model.dao.UsuarioDAOBD;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import java.sql.SQLException;
 
 @ManagedBean
 @ViewScoped
@@ -13,6 +15,8 @@ public class CadastroBean {
     }
 
     private EtapaCadastro etapaCadastro = EtapaCadastro.DADOS_PESSOAIS;
+
+    UsuarioDAOBD usuarioDAOBD = new UsuarioDAOBD();
 
     private Usuario usuario = new Usuario();
 
@@ -31,6 +35,15 @@ public class CadastroBean {
         System.out.println("Número = "+ usuario.getEndereco().getNumero());
         System.out.println("Bairro = "+ usuario.getEndereco().getBairro());
         System.out.println("Cidade = "+ usuario.getEndereco().getCidade());
+
+        try {
+            usuarioDAOBD.adicionar(usuario);
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         return "sucesso.xhtml";
     }
