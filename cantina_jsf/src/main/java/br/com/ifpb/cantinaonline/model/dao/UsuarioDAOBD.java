@@ -1,8 +1,10 @@
 package br.com.ifpb.cantinaonline.model.dao;
 
 
+import br.com.ifpb.cantinaonline.model.Acesso;
 import br.com.ifpb.cantinaonline.model.Usuario;
 import br.com.ifpb.cantinaonline.model.conexaoBanco.ConnectionFactory;
+
 
 import java.sql.*;
 
@@ -42,6 +44,25 @@ public class UsuarioDAOBD implements UsuarioDAO {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM usuario WHERE id = ?");
             statement.setString(1, usuario.getNomeUsuario());
             return statement.executeUpdate()>0;
+        }
+    }
+
+    @Override
+    public Acesso buscar(Acesso acesso) throws SQLException, ClassNotFoundException {
+        try(Connection connection = conexao.getConnection()){
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM usuario " +
+                    "WHERE nomeUsuario =? AND senha =?");
+            statement.setString(1,acesso.getNomeUsuario());
+            statement.setString(2, acesso.getSenha());
+            ResultSet set = statement.executeQuery();
+            if(set.next()){
+                Acesso acesso3 = new Acesso(set.getString("nomeusuario"),
+                        set.getString("senha"),set.getString("nomecompleto"),
+                        set.getString("funcao"));
+                return acesso3;
+            }else{
+                return null;
+            }
         }
     }
 

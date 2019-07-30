@@ -6,18 +6,17 @@
     </root>
     <database id="2" parent="1" name="Cantina Online">
       <ObjectId>35616</ObjectId>
-      <StateNumber>1382</StateNumber>
       <Owner>postgres</Owner>
+      <Substituted>1</Substituted>
     </database>
     <database id="3" parent="1" name="Estudos BDII">
       <ObjectId>28921</ObjectId>
-      <StateNumber>1070</StateNumber>
       <Owner>postgres</Owner>
+      <Substituted>1</Substituted>
     </database>
     <database id="4" parent="1" name="postgres">
       <ObjectId>13057</ObjectId>
       <Comment>default administrative connection database</Comment>
-      <StateNumber>553</StateNumber>
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>1395</IntrospectionStateNumber>
       <Current>1</Current>
@@ -59,34 +58,50 @@
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
     </role>
-    <schema id="11" parent="4" name="information_schema">
+    <schema id="11" parent="2" name="information_schema">
+      <Substituted>1</Substituted>
+    </schema>
+    <schema id="12" parent="2" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <Substituted>1</Substituted>
+    </schema>
+    <schema id="13" parent="3" name="information_schema">
+      <Substituted>1</Substituted>
+    </schema>
+    <schema id="14" parent="3" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <Substituted>1</Substituted>
+    </schema>
+    <schema id="15" parent="4" name="information_schema">
       <ObjectId>12766</ObjectId>
       <StateNumber>353</StateNumber>
       <Owner>postgres</Owner>
+      <Substituted>1</Substituted>
     </schema>
-    <schema id="12" parent="4" name="pg_catalog">
+    <schema id="16" parent="4" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
       <StateNumber>350</StateNumber>
       <Owner>postgres</Owner>
+      <Substituted>1</Substituted>
     </schema>
-    <schema id="13" parent="4" name="pg_temp_1">
+    <schema id="17" parent="4" name="pg_temp_1">
       <ObjectId>11736</ObjectId>
       <StateNumber>113</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="14" parent="4" name="pg_toast">
+    <schema id="18" parent="4" name="pg_toast">
       <ObjectId>99</ObjectId>
       <Comment>reserved schema for TOAST tables</Comment>
       <StateNumber>1</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="15" parent="4" name="pg_toast_temp_1">
+    <schema id="19" parent="4" name="pg_toast_temp_1">
       <ObjectId>11737</ObjectId>
       <StateNumber>113</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="16" parent="4" name="public">
+    <schema id="20" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <StateNumber>351</StateNumber>
@@ -95,7 +110,7 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <access-method id="17" parent="4" name="btree">
+    <access-method id="21" parent="4" name="btree">
       <ObjectId>403</ObjectId>
       <Comment>b-tree index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -103,7 +118,7 @@
       <HandlerId>330</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="18" parent="4" name="hash">
+    <access-method id="22" parent="4" name="hash">
       <ObjectId>405</ObjectId>
       <Comment>hash index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -111,7 +126,7 @@
       <HandlerId>331</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="19" parent="4" name="gist">
+    <access-method id="23" parent="4" name="gist">
       <ObjectId>783</ObjectId>
       <Comment>GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -119,7 +134,7 @@
       <HandlerId>332</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="20" parent="4" name="gin">
+    <access-method id="24" parent="4" name="gin">
       <ObjectId>2742</ObjectId>
       <Comment>GIN index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -127,7 +142,7 @@
       <HandlerId>333</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="21" parent="4" name="spgist">
+    <access-method id="25" parent="4" name="spgist">
       <ObjectId>4000</ObjectId>
       <Comment>SP-GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -135,7 +150,7 @@
       <HandlerId>334</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="22" parent="4" name="brin">
+    <access-method id="26" parent="4" name="brin">
       <ObjectId>3580</ObjectId>
       <Comment>block range index (BRIN) access method</Comment>
       <StateNumber>1</StateNumber>
@@ -143,7 +158,7 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <extension id="23" parent="4" name="plpgsql">
+    <extension id="27" parent="4" name="plpgsql">
       <ObjectId>13043</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>505</StateNumber>
