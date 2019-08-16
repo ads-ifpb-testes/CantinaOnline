@@ -91,7 +91,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564163104508" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cantina_jsf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Primefaces" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -293,6 +293,8 @@
       <workItem from="1565367917153" duration="126000" />
       <workItem from="1565371332823" duration="2090000" />
       <workItem from="1565549931172" duration="633000" />
+      <workItem from="1565646248157" duration="1776000" />
+      <workItem from="1565911709271" duration="1265000" />
     </task>
     <servers />
   </component>
