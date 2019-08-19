@@ -20,5 +20,10 @@
     <url-pattern>*.jsf</url-pattern>
   </servlet-mapping>
 
+  <welcome-file-list>
+    <welcome-file>template.jsf</welcome-file>
+  </welcome-file-list>
+
+
 </web-app>
 

@@ -1,7 +1,5 @@
 package br.com.ifpb.cantinaonline.model;
 
-import java.time.LocalDate;
-
 public class Usuario {
     private String nomeCompleto;
     private String nomeUsuario;
