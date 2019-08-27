@@ -43,7 +43,7 @@
 
 <%-- CADASTRO DE USUARIOS --%>
 <div id="modal1" class="modal">
-    <div id="divFormulario" class="row container"> <!-- Div dos Dados -->
+     c <!-- Div dos Dados -->
         <div  id="divTelaCadastro">
             <center><label class="center"><img src="../../imagens/logo.png" with="320" height="205" ></label></center>
         </div>

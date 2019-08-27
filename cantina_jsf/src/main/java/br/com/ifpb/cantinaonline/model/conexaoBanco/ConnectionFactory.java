@@ -3,6 +3,7 @@ package br.com.ifpb.cantinaonline.model.conexaoBanco;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ConnectionFactory {
 
@@ -12,11 +13,13 @@ public class ConnectionFactory {
 
     public ConnectionFactory(){
         usuario ="postgres";
-        senha = "daniel";
+        senha = "1234";
         url = "jdbc:postgresql://localhost:5432/CantinaJsf";
     }
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
         return DriverManager.getConnection(url,usuario,senha);
     }
+
+
 }

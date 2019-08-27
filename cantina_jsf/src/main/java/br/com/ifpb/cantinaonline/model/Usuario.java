@@ -10,11 +10,10 @@ public class Usuario {
     private String funcao;
     private Endereco endereco = new Endereco();
 
+   public Usuario(){
 
+   }
 
-    public Usuario() {
-
-    }
 
     public Usuario(String nomeCompleto, String nomeUsuario, Integer idade, String senha, String telefone, String funcao, Endereco endereco) {
         this.nomeCompleto = nomeCompleto;
@@ -24,6 +23,20 @@ public class Usuario {
         this.telefone = telefone;
         this.funcao = funcao;
         this.endereco = endereco;
+    }
+
+    public Usuario(String nomeCompleto, String nomeUsuario, int idade, String email,String senha, String telefone, String funcao, String cidade, String bairro, String rua, Integer numero) {
+        this.nomeCompleto = nomeCompleto;
+        this.nomeUsuario = nomeUsuario;
+        this.idade = idade;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
+        this.funcao = funcao;
+        this.endereco.setCidade(cidade);
+        this.endereco.setBairro(bairro);
+        this.endereco.setRua(rua);
+        this.endereco.setNumero(numero);
     }
 
     public String getNomeCompleto() {

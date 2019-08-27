@@ -58,8 +58,9 @@ public class ProdutoDAOBD implements ProdutoDAO {
                 double preco = set.getDouble("preco");
                 Integer quantidade = set.getInt("quantidade");
 
-                AcessoProduto acessoProduto = new AcessoProduto(id,nome,preco,quantidade);
-                arrayList.add(acessoProduto);
+                Produto produto = new Produto(id,nome,preco,quantidade);
+                arrayList.add(produto);
+
             }
 
             return arrayList;

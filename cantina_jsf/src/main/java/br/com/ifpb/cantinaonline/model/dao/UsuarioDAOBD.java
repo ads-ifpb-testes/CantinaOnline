@@ -2,11 +2,14 @@ package br.com.ifpb.cantinaonline.model.dao;
 
 
 import br.com.ifpb.cantinaonline.model.Acesso;
+import br.com.ifpb.cantinaonline.model.AcessoProduto;
 import br.com.ifpb.cantinaonline.model.Usuario;
 import br.com.ifpb.cantinaonline.model.conexaoBanco.ConnectionFactory;
 
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UsuarioDAOBD implements UsuarioDAO {
@@ -65,6 +68,36 @@ public class UsuarioDAOBD implements UsuarioDAO {
             }
         }
     }
+
+    public ArrayList listarUsuario() throws SQLException, ClassNotFoundException{
+        try(Connection connection = conexao.getConnection()){
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM usuario");
+            ResultSet set = statement.executeQuery();
+            ArrayList arrayList = new ArrayList();
+
+            while (set.next()){
+                String nomecompleto = set.getString("nomecompleto");
+                String nomeusuario = set.getString("nomeusuario");
+                int idade = set.getInt("idade");
+                String email = set.getString("email");
+                String senha = set.getString("senha");
+                String telefone = set.getNString("telefone");
+                String funcao = set.getString("funcao");
+                String cidade = set.getString("cidade");
+                String bairro = set.getString("bairro");
+                String rua = set.getString("rua");
+                Integer numero = set.getInt("numero");
+
+                Usuario usuario = new Usuario(nomecompleto,nomeusuario,idade,email,senha,telefone,funcao,cidade,bairro,rua,numero);
+                arrayList.add(usuario);
+                System.out.println(usuario);
+            }
+
+            return arrayList;
+
+        }
+    }
+
 
 
 }

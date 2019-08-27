@@ -1,33 +1,49 @@
 package br.com.ifpb.cantinaonline.view;
+import java.io.Serializable;
 
 import br.com.ifpb.cantinaonline.model.Produto;
 import br.com.ifpb.cantinaonline.model.dao.ProdutoDAOBD;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @ManagedBean
 @ViewScoped
-public class ProdutoBean {
+public class ProdutoBean implements Serializable{
+    public enum ProdutoState { LIST, CREATE, UPDATE, REMOVE }
+    private ProdutoState currentState;
+
 
     private Produto produto;
-    private List<Produto> produtos;
+    private List<Produto> produtos = new ArrayList<>();
+    ProdutoDAOBD produtoDAOBD = new ProdutoDAOBD();
+    private List<SelectItem> produtosDisponiveis;
 
-    public String listarProdutos() throws SQLException, ClassNotFoundException {
-
-        ProdutoDAOBD produtoDAOBD = new ProdutoDAOBD();
+    public void list() throws SQLException, ClassNotFoundException {
         this.produtos = produtoDAOBD.listarProduto();
-        return "listagemProdutos.xhtml";
-
+        this.produtosDisponiveis = this.produtos.stream().map( item -> new SelectItem(item, item.getId())).collect(Collectors.toList());
+        this.currentState = ProdutoState.LIST;
+    }
+    public void prepareCreate() {
+        this.currentState = ProdutoState.CREATE;
+        this.produto = new Produto();
     }
 
-    public List<Produto> getUsuarios() {
+    public List<Produto> getProdutos() {
         return produtos;
     }
 
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
 
-
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 }

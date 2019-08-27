@@ -38,6 +38,7 @@ public class CadastroBean {
 
         try {
             usuarioDAOBD.adicionar(usuario);
+
         } catch (SQLException e) {
             e.printStackTrace();
 
