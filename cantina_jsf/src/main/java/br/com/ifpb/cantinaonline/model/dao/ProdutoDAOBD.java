@@ -1,5 +1,6 @@
 package br.com.ifpb.cantinaonline.model.dao;
 
+import br.com.ifpb.cantinaonline.model.Acesso;
 import br.com.ifpb.cantinaonline.model.AcessoProduto;
 import br.com.ifpb.cantinaonline.model.Produto;
 import br.com.ifpb.cantinaonline.model.conexaoBanco.ConnectionFactory;
@@ -41,8 +42,22 @@ public class ProdutoDAOBD implements ProdutoDAO {
         }
     }
     @Override
-    public boolean buscarProduto(Produto produto) throws SQLException, ClassNotFoundException {
-        return false;
+    public Produto buscarProduto(Produto produto) throws SQLException, ClassNotFoundException {
+        try(Connection connection = conexao.getConnection()){
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM produto " +
+                    "WHERE id =? AND nome =?");
+            statement.setString(1,produto.getId());
+            statement.setString(2, produto.getNome());
+            ResultSet set = statement.executeQuery();
+            if(set.next()){
+                Produto produto1 = new Produto(set.getString("id"),
+                        set.getString("nome"),set.getDouble("preco"),
+                        set.getInt("quantidade"));
+                return produto1;
+            }else{
+                return null;
+            }
+        }
     }
 
     @Override

@@ -37,7 +37,7 @@ public class UsuarioBean implements Serializable{
     private UsuarioState currentState;
 
     @ManagedProperty("#{loginBean.nomeUsuario}")
-    private String login;
+    private String nomeUsuario;
 
     public void list() throws SQLException, ClassNotFoundException {
         this.usuarios = usuarioDAOBD.listarUsuario();
@@ -45,10 +45,19 @@ public class UsuarioBean implements Serializable{
         this.currentState = UsuarioState.LIST;
 
     }
+    public void prepareCreate() {
+        this.currentState = UsuarioState.CREATE;
+        this.usuario = new Usuario();
+    }
+    public void prepareRemove() {
+        this.currentState = UsuarioState.REMOVE;
+    }
 
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
 
-
-
-
-
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
 }
