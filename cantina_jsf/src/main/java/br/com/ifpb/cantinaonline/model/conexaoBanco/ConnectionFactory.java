@@ -13,9 +13,11 @@ public class ConnectionFactory {
 
     public ConnectionFactory(){
         usuario ="postgres";
-        senha = "1234";
+//        senha = "1234";
+        senha = "postgres";
         url = "jdbc:postgresql://localhost:5432/CantinaJsf";
     }
+
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
         return DriverManager.getConnection(url,usuario,senha);
