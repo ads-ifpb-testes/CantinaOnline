@@ -84,7 +84,7 @@
                     <p:inputText  required="true"  value="#{buscaBean.busca}" style="background: #ffffff; padding-left: 10px; font-family: 'Ubuntu Light';" placeholder="Buscar"/>
                 </div>
                 <div class="col s5" style="margin-top: 10px;">
-                    <p:commandButton  update="@all"  action="buscaProduto.xhtml" styleClass="btn waves-effect waves-ripple" style="margin: 10px; color: black; background: #9575cd;border-radius: 10px;" value="Buscar" />
+                    <p:commandButton  update="@all"  action="#{buscaBean.buscaProdutos}" styleClass="btn waves-effect waves-ripple" style="margin: 10px; color: black; background: #9575cd;border-radius: 10px;" value="Buscar" />
                     <p:commandButton action="login.xhtml" styleClass="btn waves-effect waves-ripple" style="margin: 10px; color: black; background: #9575cd;border-radius: 10px;" value="Login"/>
                     <p:commandButton action="cadastro.xhtml" styleClass="btn waves-effect waves-purple " style="margin: 10px; color: black;background: #9575cd;border-radius: 10px;" value="Cadastrar"/>
                 </div>

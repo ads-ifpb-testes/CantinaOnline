@@ -27,7 +27,7 @@ public class BuscaBean {
 
 
         produtos = produtoDAOBD.buscarProduto(busca);
-        return "buscaImovel.xhtml";
+        return "buscaProduto.xhtml";
     }
 
     public ProdutoDAOBD getProdutoDAOBD() {

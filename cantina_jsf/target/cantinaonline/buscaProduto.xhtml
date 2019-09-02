@@ -4,34 +4,43 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="WEB-INF/template/layout.xhtml">
+    <h:outputStylesheet name="css/materialize.min.css"></h:outputStylesheet>
 
     <ui:define name="content">
-        <div class="row container " style="margin-top: 30px" >
-            <h:form StyleClass="col s6 white row">
-                <p:inputText required="true" value="#{buscaBean.busca}"  id="search" type="text"  name="search" style="width: 30%;background: #ffffff;color: black;border-radius: 10px;margin-left: 35%"/>
-                <p:commandButton update="@all" action="#{buscaBean.buscaProdutos}"  value="Buscar" style="width: 100px;height:50px;background: #ffffff;color: black;border-radius: 10px;text-align: right"></p:commandButton>
-            </h:form>
-        </div>
-        <div class="divider"></div>
-        <p:repeat value="#{buscaBean.produtos}" var="produto">
 
-            <div class="col s9 m7">
-                <div class="card horizontal z-depth-4">
 
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <h5 id="nomeProduto">${produto.nome}</h5>
-                            <p>${produto.id}</p>
-                            <p>${produto.preco}</p>
-                            <p>${produto.quantidade} </p>
+        <div class="container center" style="margin-bottom: 50px;">
+
+            <div class="row" style="margin-top: 10% !important;">
+
+                <ui:repeat value="#{buscaBean.produtos}" var="produto">
+
+                    <div class="card col s12 m6 l3">
+                        <div class="card-title black-text" style="margin-top: 5% !important;">
+                            <span>#{produto.nome}</span>
                         </div>
+                        <div class="card-content">
+                            <p style="font-size: 12px">Preço: #{produto.preco}</p>
 
+                            <br/>
+
+                            <a class="teal-text" href="#">Adicionar ao carrinho</a>
+                        </div>
                     </div>
-                </div>
+
+                </ui:repeat>
+
             </div>
-        </p:repeat>
+
+        </div>
+
 
     </ui:define>
+
+
+
+
+
 </ui:composition>
 
 
