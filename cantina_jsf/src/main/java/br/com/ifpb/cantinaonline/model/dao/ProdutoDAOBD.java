@@ -1,7 +1,5 @@
 package br.com.ifpb.cantinaonline.model.dao;
 
-import br.com.ifpb.cantinaonline.model.Acesso;
-import br.com.ifpb.cantinaonline.model.AcessoProduto;
 import br.com.ifpb.cantinaonline.model.Produto;
 import br.com.ifpb.cantinaonline.model.conexaoBanco.ConnectionFactory;
 
@@ -42,22 +40,26 @@ public class ProdutoDAOBD implements ProdutoDAO {
         }
     }
     @Override
-    public Produto buscarProduto(Produto produto) throws SQLException, ClassNotFoundException {
+    public ArrayList buscarProduto(String nomeProduto) throws SQLException, ClassNotFoundException {
         try(Connection connection = conexao.getConnection()){
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM produto " +
-                    "WHERE id =? AND nome =?");
-            statement.setString(1,produto.getId());
-            statement.setString(2, produto.getNome());
+                    "WHERE nome ILIKE ? ");
+            System.out.println("oi");
+            statement.setString(1,nomeProduto);
             ResultSet set = statement.executeQuery();
-            if(set.next()){
-                Produto produto1 = new Produto(set.getString("id"),
-                        set.getString("nome"),set.getDouble("preco"),
-                        set.getInt("quantidade"));
-                return produto1;
-            }else{
-                return null;
+            ArrayList produtos = new ArrayList();
+            while (set.next()){
+                String id = set.getString("id");
+                String nome = set.getString("nome");
+                double preco = set.getDouble("preco");
+                Integer quantidade = set.getInt("quantidade");
+
+                Produto produto = new Produto(id,nome,preco,quantidade);
+                produtos.add(produto);
             }
+            return produtos;
         }
+
     }
 
     @Override

@@ -82,8 +82,8 @@
             <p:graphicImage name="imagem/logo.jpg" style="width: 55px;height:50px;" />
 
 
-            <p:commandButton style="width: 80px;height:50px;background: #ffffff;color: black;border-radius: 10px;text-align: right;margin-left: 35%" value="Buscar" />
-            <p:inputText style="width: 30%;background: #ffffff;color: black;border-radius: 10px;" placeholder="Buscar" />
+            <p:commandButton  update="@all"  action="buscaProduto.xhtml"  style="width: 80px;height:50px;background: #ffffff;color: black;border-radius: 10px;text-align: right;margin-left: 35%" value="Buscar" />
+            <p:inputText required="true"  value="#{buscaBean.busca}"  id="search" type="text"  name="search" style="width: 30%;background: #ffffff;color: black;border-radius: 10px;" placeholder="Buscar" />
 
             <p:commandButton action="login.xhtml" styleClass="btn waves-effect waves-ripple" style="width: 10%; color: black; background: #9575cd;border-radius: 10px; " value="Login"><i class="material-icons">search</i></p:commandButton>
             <p:commandButton action="cadastro.xhtml" styleClass="btn waves-effect waves-purple " style="width: 10%; color: black;background: #9575cd;border-radius: 10px;" value="Cadastrar"/>
