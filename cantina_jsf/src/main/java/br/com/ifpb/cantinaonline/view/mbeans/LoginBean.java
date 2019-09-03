@@ -15,11 +15,15 @@ import java.sql.SQLException;
 public class LoginBean {
     private String nomeUsuario;
     private String senha;
+
+    private Acesso usuarioLogado;
+
     public String efetuarLogin() throws SQLException, ClassNotFoundException {
-        Acesso acesso = new Acesso(nomeUsuario,senha,"","");
+        this.usuarioLogado = new Acesso(nomeUsuario,senha,"","");
         UsuarioDAOBD usuarioDAOBD = new UsuarioDAOBD();
-        if(usuarioDAOBD.buscar(acesso) != null){
-            System.out.println(usuarioDAOBD.buscar(acesso));
+
+        if(usuarioDAOBD.buscar(usuarioLogado) != null){
+            System.out.println(usuarioDAOBD.buscar(usuarioLogado));
             return "usuario.xhtml";
         } else {
             FacesMessage message = new FacesMessage("Login ou Senha incorretos", "Login ou Senha incorretos");
@@ -27,7 +31,11 @@ public class LoginBean {
             return "";
         }
 
+    }
 
+    public String retornar() throws Exception{
+        return "template.xhtml";
+        
     }
 
     public String fazerLogout() {
@@ -36,7 +44,9 @@ public class LoginBean {
         return "login.xhtml";
     }
 
-
+    public Acesso getUsuarioLogado(){
+        return  usuarioLogado;
+    }
 
     public String getNomeUsuario() {
         return nomeUsuario;
