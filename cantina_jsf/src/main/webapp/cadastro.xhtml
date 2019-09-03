@@ -32,13 +32,6 @@
             <center><p:graphicImage name="imagem/logo.jpg" style="width: 60px;height:60px;" /></center>
         </div>
         <div id="divFormulario" class="row container">
-
-
-
-
-
-
-
         <h:panelGrid columns="3">
 
 
@@ -57,22 +50,35 @@
             </h:inputText>
             <h:message for="idade" />
 
+
             <h:outputLabel value="E-mail: " />
-            <h:inputText id="email" required="true" requiredMessage="E-mail é obrigatório" value="#{cadastroBean.usuario.email}" />
+            <h:inputText id="email" required="true" validator="emailValidator" requiredMessage="E-mail é obrigatório" value="#{cadastroBean.usuario.email}" />
             <h:message for="email" />
 
-            <h:outputLabel value="Senha: " />
-            <h:inputSecret id="senha" required="true" requiredMessage="Senha obrigatória" value="#{cadastroBean.usuario.senha}" />
-            <h:message for="senha" />
+<!--            <h:outputLabel value="Senha: " />-->
+<!--            <h:inputSecret id="senha" required="true" requiredMessage="Senha obrigatória" value="#{cadastroBean.usuario.senha}" />-->
+<!--            <h:message for="senha" />-->
+
+            <h:outputLabel value="Senha Validada: " />
+            <p:password id="passwordInput" requiredMessage="Senha Obrigatória" class="password" size="40" maxlength="20"
+                        value="#{cadastroBean.usuario.senha}" required="true"
+                        validatorMessage="Senha válida somente no padrão ipe@1234.">
+                <f:validateRegex pattern="((\\d)*([a-z])*([A-Z])*([@#$%])*){6,20})"/> </p:password>
 
             <h:outputLabel value="Telefone: " />
             <h:inputText id="telefone" required="true" requiredMessage="Login é obrigatório" value="#{cadastroBean.usuario.telefone}" />
             <h:message for="telefone" />
 
-            <h:selectOneRadio value = "#{cadastroBean.usuario.funcao}">
-                <f:selectItem itemValue = "Funcionario" itemLabel = "funcionario" />
-                <f:selectItem itemValue = "Clinte" itemLabel = "Cliente" />
-            </h:selectOneRadio>
+<!--            <h:selectOneRadio value = "#{cadastroBean.usuario.funcao}">-->
+<!--                <f:selectItem itemValue = "Funcionario" itemLabel = "funcionario" />-->
+<!--                <f:selectItem itemValue = "Clinte" itemLabel = "Cliente" />-->
+<!--            </h:selectOneRadio>-->
+
+<!--            <p:outputLabel for="console" value="Função:" />-->
+            <p:selectOneRadio id="console" value="#{cadastroBean.usuario.funcao}" unselectable="true">
+                <f:selectItem itemLabel="Funcionario" itemValue="Funcionario" />
+                <f:selectItem itemLabel="Cliente" itemValue="Cliente" />
+            </p:selectOneRadio>
 
 
 
@@ -82,8 +88,8 @@
 
         </div>
 
-            <div class="footer-copyright" style="width: 100%; position: absolute; bottom: 0px; ">
-                <label  id="CopyRight" >CNPJ: 12.216.621/0001-96 | 12216621000196 St Srtv/sul Quadra 701 Conjunto L Bloco 02, 30, Sala 417 Parte B 10 | Brasilia - DF, CEP: 70340-906.</label>
+            <div class="footer-copyright" style="width: 100%; position: fixed; bottom: 0px; ">
+                <label id="CopyRight" >Cajazeiras-PB 2019 | Todos os direitos reservados</label>
             </div>
 
 
@@ -122,7 +128,7 @@
         </h:panelGrid>
         </div>
         <div class="footer-copyright" style="width: 100%; position: absolute; bottom: 0px; ">
-            <label >CNPJ: 12.216.621/0001-96 | 12216621000196 St Srtv/sul Quadra 701 Conjunto L Bloco 02, 30, Sala 417 Parte B 10 | Brasilia - DF, CEP: 70340-906.</label>
+            <label > Cajazeiras-PB 2019 | Todos os direitos reservados</label>
         </div>
 
     </h:form>
